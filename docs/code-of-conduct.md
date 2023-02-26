@@ -1,5 +1,3 @@
-[NEI-AAUAv Platform](../README.md)
-
 # Code of Conduct
 
 This document is a set of guidelines and standards for contributing to the NEI website.
@@ -70,7 +68,8 @@ The **hotfix branch** come from the need to act immediately upon an undesired st
 
 ## Issue Labeling
 
-The labels were inspired [here](https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues).
+The labels were inspired in [Best Practice System for Organizing and Tagging Github Issues](https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues).
 
-<img src="./images/issue-labels.jpeg" style="border-radius: 6px; display: block; max-width: 100%; height: auto; margin: auto; float: none!important;" alt="Issue Labels" width="600" title="Issue Labeling">
 
+
+![Issue Labeling](/assets/images/issue-labels.jpeg)

@@ -1,11 +1,65 @@
-site_name: NEI_Documentation
+site_name: NEI Platform Documentation
+
+site_url: http://atnog-crowdwire1.av.it.pt/
+site_description: Project documentation with Markdown.
+site_author: NEI Administration Team
+repo_url: https://github.com/NEI-AAUAV/PlatformDocumentation
+repo_name: Platform-Documentation
+
 nav:
   - Home: index.md
-  - API: API.md
-  - Developer: DEVELOPER.md
-  - Code_of_Condute: CODE_OF_CONDUCT.md
-  - Seniors: Seniors.md
-  - Admin: ADMIN.md
+  - Code of Conduct: code-of-conduct.md
+  - Getting Started: dev-guide/installation.md
+  - Developer Guide:
+    - Overview: dev-guide/README.md
+    - Installation: dev-guide/installation.md
+    - Deployment: dev-guide/deployment.md
+    - Architecture: dev-guide/architecture.md
+    - REST APIs: dev-guide/rest-api.md
+    - Database UMLs: dev-guide/db-uml.md
+    - Decisions: dev-guide/decisions.md
+  - Admin Guide:
+    - Overview: admin-guide/README.md
+
 theme:
-  name: mkdocs
-  nav_style: dark
+  name: material
+  favicon: assets/favicon.ico
+  logo: assets/logo.png
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: white
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
+  features:
+    - navigation.instant
+    - navigation.top
+
+copyright: Copyright &copy; 2023 - All right reserved by NEI-AAUAv
+
+plugins:
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - skip-glightbox
+      auto_caption: false
+      caption_position: bottom
+
