@@ -72,4 +72,4 @@ The labels were inspired in [Best Practice System for Organizing and Tagging Git
 
 
 
-![Issue Labeling](/assets/images/issue-labels.jpeg)
+![Issue Labeling](assets/images/issue-labels.jpeg)
