@@ -3,7 +3,7 @@
 
 ## NEI Service
 
-![NEI Service UML](assets/images/nei-uml.svg)
+![NEI Service UML](../assets/images/nei-uml.svg)
 
 ## Taça UA Service
 

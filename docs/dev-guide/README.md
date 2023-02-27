@@ -29,8 +29,4 @@ Sometimes, uploading large image files on form-data with Postman resulted in "Th
 
 
 
-[NEI-AAUAv Platform](../README.md)
-
-
-
 
