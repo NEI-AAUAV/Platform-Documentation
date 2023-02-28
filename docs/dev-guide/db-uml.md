@@ -7,6 +7,7 @@
 
 ## Taça UA Service
 
+![Taça UA Service UML](../assets/images/tacaua-uml.svg)
 
 ## Family Service
 

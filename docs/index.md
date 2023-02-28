@@ -3,4 +3,4 @@
 
 ## Overview
 
-CrowdWire is an open-source application that welcomes anybody that wants to contribute to our goals. This repository aims to describe the Project Planning, Architecture and Documentation for the CrowdWire Project.
+This repository aims to describe the Platform Planning, Architecture and Documentation for the NEI-AAUAv Platform.
