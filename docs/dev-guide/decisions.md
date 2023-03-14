@@ -12,6 +12,12 @@ https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply
 
 
 
+>The most important implication of how Tailwind extracts class names is that it will only find classes that exist as complete unbroken strings in your source files.\
+If you use string interpolation or concatenate partial class names together, Tailwind will not find them and therefore will not generate the corresponding CSS.\
+> [Class Detection in Depth](https://tailwindcss.com/docs/content-configuration#class-detection-in-depth)
+
+
+
 ## FastAPI structure
 
 (only api accesses crud, and only crud accesses db)

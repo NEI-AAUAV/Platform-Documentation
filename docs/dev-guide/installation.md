@@ -19,6 +19,17 @@ To run the project in your host machine, read the **Local Installation** section
 
 ## Docker Installation
 
+If you don't know how to install docker on Linux, we recommend you to follow this steps:
+
+- Install Docker Engine from [Docker's apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Follow the 3 steps from *Set up the repository* and the 3 steps from *Install Docker Engine*.
+
+- Afterward, follow the 4 [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) for Docker Engine to run docker without `sudo`.
+
+- Finally, install the [Compose standalone](https://docs.docker.com/compose/install/other/#on-linux) to use `docker-compose`.\
+Do not forget to run `sudo chmod +x /usr/local/bin/docker-compose` in step 2.
+
+
+
 To run the project in docker containers, run the following commands. These will create and run the entire stack, meaning every service, in development mode. Since the containers are using bind mounts, every modification in your code will be triggered on the fly.
 
 Creates and starts all containers of the stack. Use the flag `-d` to run in detached mode.
