@@ -1,23 +1,72 @@
 ## Local Installation
 
-To run the project in your host machine, read the **Local Installation** section of each service documentation.
+This is a walkthrough on how to run each service in your **host machine**.
 
-<!-- - [NEI Web App](../web-nei/README.md#local-installation) web_nei
-- [NEI API](../api-nei/README.md#local-installation) api_nei
-- [Taça UA API](../api-tacaua/README.md#local-installation) api_tacaua -->
+### Web-App NEI `web-nei`
 
+Download the node setup from version 18 (latest LTS version at the time).
+```
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+```
 
-### API NEI
+Then, install the node setup. After this, the command `node -v` should return the version 18.
+```
+sudo apt-get install nodejs
+```
 
+Install yarn using node:
+```
+sudo npm install --global yarn
+```
 
-### API Taça UA
+On the service's root directory `/web-nei`, install the dependencies with this command. All dependencies will be saved in the node_modules folder, which will be created.
+```
+yarn install
+```
 
+Finally, to start the service run:
+```
+yarn start
+```
 
-### API Family
+### API NEI `api-nei`
 
+This API requires a connection to a PostgreSQL database. If you want to run this API stand-alone, it is recommended to creates a database inside a docker container, rather than in your host. For that, [install docker](#docker-installation) if needed and run this command to create the container. Once created, the container will always exist, unless it is specifically removed with `docker rm pg_db`. However, it might be necessary to start the container again when it stops (e.g. after a reboot). To start and stop the container, use docker [start|stop] pg_db.
+```
+docker run -d -p 0.0.0.0:5432:5432 -e POSTGRES_PASSWORD="postgres" --name pg_db postgres
+```
 
+Afterward, make sure to have poetry installed.
+```
+pip install poetry
+```
+
+Run this command to install all the Python dependencies required:
+```
+poetry install
+```
+
+You can use poetry to add more dependencies to the project (e.g. `poetry add uvicorn[standard]@latest`).<br>
+Use `poetry show` to list all the dependencies.
+
+Then, on the service's root directory `/api-nei`, run the FastAPI server via poetry with the Python command:
+```
+poetry run uvicorn app.main:app --reload
+```
+
+### API Taça UA `api-tacaua`
+
+The installation for this api is equal to the [API NEI installation](#api-nei-api-nei).
+
+### API Family `api-family`
+
+*To be written...*
 
 ## Docker Installation
+
+This is a walkthrough on how to run each service in **docker containers**.<br>
+You can use `docker-compose` to install and run every service or a single service easily.<br>
+On alternative, you can use `docker` to create the images and the container manually by following the respective service section below.
 
 If you don't know how to install docker on Linux, we recommend you to follow this steps:
 
@@ -25,51 +74,65 @@ If you don't know how to install docker on Linux, we recommend you to follow thi
 
 - Afterward, follow the 4 [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) for Docker Engine to run docker without `sudo`.
 
-- Finally, install the [Compose standalone](https://docs.docker.com/compose/install/other/#on-linux) to use `docker-compose`.\
-Do not forget to run `sudo chmod +x /usr/local/bin/docker-compose` in step 2.
+- Finally, install the [Compose standalone](https://docs.docker.com/compose/install/other/#on-linux) to use `docker-compose`.<br>
+**NOTES:** You may need to run `curl` with `sudo`, and do not forget to run `sudo chmod +x /usr/local/bin/docker-compose` in step 2.
 
 
+### Platform (run everything)
 
-To run the project in docker containers, run the following commands. These will create and run the entire stack, meaning every service, in development mode. Since the containers are using bind mounts, every modification in your code will be triggered on the fly.
+These commands will use `docker-compose` to create and run the entire stack, meaning every service, in development mode. Since the containers are using bind mounts, every modification in your code will be triggered on the fly and update the containers.
 
-Creates and starts all containers of the stack. Use the flag `-d` to run in detached mode.
+If you want to create the images and the container manually 
 
+1. Create and start all containers of the stack. Use the flag `-d` to run in detached mode.
 ```
 docker-compose up --build
 ```
 
-Stops or starts all containers of the stack, once already created.
-
+2. Stop or start all containers of the stack, once already created.
 ```
 docker-compose [stop|start]
 ```
 
-Stops and removes the containers, including the volumes. Use this to rebuild the stack whenever any dependency is added (e.g. a `yarn` dependency).
-
+3. Stop and remove the containers, including the volumes. Use this to rebuild the stack whenever any dependency is added (e.g. a `yarn` dependency).
 ```
 docker-compose down -v
 ```
 
-To run one service individually, append the service name to the command (e.g. `api_nei`). 
-
+4. To run one service individually, append the service name to the command (e.g. `api_nei`). 
 ```
 docker-compose up --build [SERVICE...]
 ```
 
-An alternative is to create the images and the container manually by reading the **Docker Installation** section in the respective service documentation.
 
-<!-- - [NEI Web App](../web-nei/README.md#docker-installation) web_nei
-- [NEI API](../api-nei/README.md#docker-installation) api_nei
-- [Taça UA API](../api-tacaua/README.md#docker-installation) api_tacaua -->
-
-### API NEI
-
-### API Taça UA
-
-### API Family
+### Web-App NEI `web-nei`
 
 
+### API NEI `api-nei`
 
+Create the container for two PostgreSQL databases, postgres and postgres_test.
+```
+docker run -d -p 0.0.0.0:5432:5432 -e POSTGRES_DB="postgres_test" -e POSTGRES_PASSWORD="postgres" --name pg_db postgres:15-alpine
+```
+On the service's root directory `/api-nei`, build the image that will be used to create the service container. The flag `--no-cache` can be useful in some situations that require to not use cache when building the image.
+```
+docker build . -t api_nei [--no-cache]
+```
+
+Create the NEI-API service.
+```
+docker run -it -v `pwd`:/api_nei --network host --name api_nei api_nei
+```
+
+With this latter step, everything is completed. To restart the service afterwards, simply run `docker start pg_db` and `docker start -i api_nei` (the `-i` flag runs the container in interactive mode).
+
+### API Taça UA `api-tacaua`
+
+*To be written...*
+
+### API Family `api-family`
+
+*To be written...*
 
 ## Installation Troubleshooting
 
