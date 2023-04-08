@@ -124,7 +124,9 @@ Create the NEI-API service.
 docker run -it -v `pwd`:/api_nei --network host --name api_nei api_nei
 ```
 
-With this latter step, everything is completed. To restart the service afterwards, simply run `docker start pg_db` and `docker start -i api_nei` (the `-i` flag runs the container in interactive mode).
+With this latter step, everything is completed. Check http://localhost:8000/docs to watch the API documentation with Swagger UI.
+
+To restart the service afterwards, simply run `docker start pg_db` and `docker start -i api_nei` (the `-i` flag runs the container in interactive mode).
 
 ### API Taça UA `api-tacaua`
 
@@ -138,7 +140,7 @@ With this latter step, everything is completed. To restart the service afterward
 
 Common errors that can happen during installation.
 
-### Poetry cannot install `psycopg2`
+**Poetry cannot install `psycopg2`**
 
 If `psycopg2` cannot be installed with `poetry install` due to the error `pg_config executable not found`, the pyscopg2 documentation recommends installing the following packages:
 
@@ -146,7 +148,7 @@ If `psycopg2` cannot be installed with `poetry install` due to the error `pg_con
 sudo apt install python3-dev libpq-dev
 ```
 
-### Address already in use
+**Address already in use**
 
 If the FastAPI is having problems to start because the address is already in use, it is likely that another application is using the same port it is trying to use (the default port is **8000**). For a quick fix, kill the processes using that port with:
 

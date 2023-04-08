@@ -102,6 +102,13 @@ https://requests-oauthlib.readthedocs.io/en/latest/oauth1_workflow.html
 > The IUPI (Identificador Único de Projectos e Indivíduos) makes it possible to uniquely identify the user, independently of any system in which the information is found. For users, it is perceived as an email address; for systems, an IUPI is a GUID. It is through this GUID that the communication and exchange of information regarding a user within the various systems is carried out. A user can change his profile (student, ex-student, collaborator, employee, etc.) and even his email, but never his IUPI.
 
 
+### Multiple accounts 
+
+It can be a good practice to allow users to authenticate with multiple emails associated with the same account, as it provides flexibility and convenience for the user. Besides, are able to ex-students to keep their access to the platform through their personal email account, as they will lose access to their UA email account after leaving university.
+
+As such, the `User` table has an association with a `UserEmail` table that permits this one-to-many relation, where each row contains one of the user's email and its active status (whether the email verification was completed).
+
+
 ## NGINX with HTTPS on development environment
 
 https://www.baeldung.com/openssl-self-signed-cert#creating-a-private-key
