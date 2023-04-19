@@ -20,8 +20,8 @@ nav:
     - Good Practices: dev-guide/good-practices.md
   - Admin Guide:
     - Overview: admin-guide/README.md
-    - Deployment: dev-guide/deployment.md
-    - Decisions: dev-guide/decisions.md
+    - Deployment: admin-guide/deployment.md
+    - Decisions: admin-guide/decisions.md
 
 theme:
   name: material
