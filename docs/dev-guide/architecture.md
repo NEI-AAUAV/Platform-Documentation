@@ -3,7 +3,7 @@
 
 
 <!-- TODO: complete -->
-![NEI Architecture](../assets/images/architecture.jpeg)
+![NEI Architecture](/docs/assets/images/architecture.jpeg)
 
 One of the primary advantages of microservices is that teams can work independently, with their tools and in a different language from other teams. So, code reuse might not be possible.
 
