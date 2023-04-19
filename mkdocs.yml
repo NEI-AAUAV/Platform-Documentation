@@ -15,7 +15,6 @@ nav:
     - Installation: dev-guide/installation.md
     - Architecture: dev-guide/architecture.md
     - REST APIs: dev-guide/rest-api.md
-    - Database UMLs: dev-guide/db-uml.md
     - Package Management: dev-guide/package-management.md
     - Good Practices: dev-guide/good-practices.md
   - Admin Guide:

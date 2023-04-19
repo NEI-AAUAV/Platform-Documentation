@@ -10,3 +10,15 @@ One of the primary advantages of microservices is that teams can work independen
 Schema-per-service – each service has a database schema that’s private to that service
 
 
+# Database UMLs
+
+## NEI Service
+
+![NEI Service UML](../assets/images/nei-uml.svg)
+
+## Taça UA Service
+
+![Taça UA Service UML](../assets/images/tacaua-uml.svg)
+
+## Family Service
+
