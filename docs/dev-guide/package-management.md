@@ -153,6 +153,6 @@ yarn upgrade-interactive
 As mentioned above, do not use `npm` for listing packages. While `npm ls` may seem equivalent to `yarn list`, it does not take into account the `yarn.lock`.
 
 
-![Dependabot Update Attempt](/docs/assets/images/package-management/dependabot-update-error.png)
+![Dependabot Update Attempt](../assets/images/package-management/dependabot-update-error.png)
 
 This error message indicates that `nth-check`, a dependency of `react-scripts`, could not be updated to the version **2.0.1** (where the patch that fixed the vulnerability was made) since it was not compatible with the range version required by `react-scripts`. It shows how dependabot is useful to automatically updated vulnerable package versions whenever possible.
