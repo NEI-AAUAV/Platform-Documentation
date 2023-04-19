@@ -13,13 +13,15 @@ nav:
   - Developer Guide:
     - Overview: dev-guide/README.md
     - Installation: dev-guide/installation.md
-    - Deployment: dev-guide/deployment.md
     - Architecture: dev-guide/architecture.md
     - REST APIs: dev-guide/rest-api.md
     - Database UMLs: dev-guide/db-uml.md
-    - Decisions: dev-guide/decisions.md
+    - Package Management: dev-guide/package-management.md
+    - Good Practices: dev-guide/good-practices.md
   - Admin Guide:
     - Overview: admin-guide/README.md
+    - Deployment: dev-guide/deployment.md
+    - Decisions: dev-guide/decisions.md
 
 theme:
   name: material
