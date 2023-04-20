@@ -47,22 +47,23 @@ docker-compose up --build [SERVICE...]
 ### Services (run individually)
 
 <details>
-<summary>Web-App NEI (web-nei)</summary>
+<summary>Web-App NEI <code>web-nei</code></summary>
 <br>
 
-*To be written...*
+to be written
+<!-- TODO: complete -->
 </details>
 
 
 <details>
-<summary>API NEI (api-nei)</summary>
+<summary>API NEI <code>api-nei</code></summary>
 <br>
 
 Create the container for two PostgreSQL databases, postgres and postgres_test.
 ```
 docker run -d -p 0.0.0.0:5432:5432 -e POSTGRES_DB="postgres_test" -e POSTGRES_PASSWORD="postgres" --name pg_db postgres:15-alpine
 ```
-On the service's root directory `/api-nei`, build the image that will be used to create the service container. The flag `--no-cache` can be useful in some situations that require to not use cache when building the image.
+On the service's root directory <code>/api-nei</code>, build the image that will be used to create the service container. The flag <code>--no-cache</code> can be useful in some situations that require to not use cache when building the image.
 ```
 docker build . -t api_nei [--no-cache]
 ```
@@ -74,23 +75,25 @@ docker run -it -v `pwd`:/api_nei --network host --name api_nei api_nei
 
 With this latter step, everything is completed. Check http://localhost:8000/docs to watch the API documentation with Swagger UI.
 
-To restart the service afterwards, simply run `docker start pg_db` and `docker start -i api_nei` (the `-i` flag runs the container in interactive mode).
+To restart the service afterwards, simply run <code>docker start pg_db</code> and <code>docker start -i api_nei</code> (the <code>-i</code> flag runs the container in interactive mode).
 </details>
 
 
 <details>
-<summary>API Taça UA (api-tacaua)</summary>
+<summary>API Taça UA <code>api-tacaua</code></summary>
 <br>
 
-*To be written...*
+to be written
+<!-- TODO: complete -->
 </details>
 
 
 <details>
-<summary>API Family (api-family)</summary>
+<summary>API Family <code>api-family</code></summary>
 <br>
 
-*To be written...*
+to be written
+<!-- TODO: complete -->
 </details>
 
 
@@ -100,7 +103,7 @@ To restart the service afterwards, simply run `docker start pg_db` and `docker s
 This is a walkthrough on how to run each service in your **host machine**.
 
 <details>
-<summary>Web-App NEI (web-nei)</summary>
+<summary>Web-App NEI <code>web-nei</code></summary>
 <br>
 
 Download the node setup from version 18 (latest LTS version at the time).
@@ -108,7 +111,7 @@ Download the node setup from version 18 (latest LTS version at the time).
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ```
 
-Then, install the node setup. After this, the command `node -v` should return the version 18.
+Then, install the node setup. After this, the command <code>node -v</code> should return the version 18.
 ```
 sudo apt-get install nodejs
 ```
@@ -118,7 +121,7 @@ Install yarn using node:
 sudo npm install --global yarn
 ```
 
-On the service's root directory `/web-nei`, install the dependencies with this command. All dependencies will be saved in the node_modules folder, which will be created.
+On the service's root directory <code>/web-nei</code>, install the dependencies with this command. All dependencies will be saved in the node_modules folder, which will be created.
 ```
 yarn install
 ```
@@ -131,10 +134,10 @@ yarn start
 
 
 <details>
-<summary>API NEI (api-nei)</summary>
+<summary>API NEI <code>api-nei</code></summary>
 <br>
 
-This API requires a connection to a PostgreSQL database. If you want to run this API stand-alone, it is recommended to creates a database inside a docker container, rather than in your host. For that, [install docker](#docker-installation) if needed and run this command to create the container. Once created, the container will always exist, unless it is specifically removed with `docker rm pg_db`. However, it might be necessary to start the container again when it stops (e.g. after a reboot). To start and stop the container, use docker [start|stop] pg_db.
+This API requires a connection to a PostgreSQL database. If you want to run this API stand-alone, it is recommended to creates a database inside a docker container, rather than in your host. For that, install docker if needed and run this command to create the container. Once created, the container will always exist, unless it is specifically removed with <code>docker rm pg_db</code>. However, it might be necessary to start the container again when it stops (e.g. after a reboot). To start and stop the container, use <code>docker [start|stop] pg_db</code>.
 ```
 docker run -d -p 0.0.0.0:5432:5432 -e POSTGRES_PASSWORD="postgres" --name pg_db postgres
 ```
@@ -149,10 +152,10 @@ Run this command to install all the Python dependencies required:
 poetry install
 ```
 
-You can use poetry to add more dependencies to the project (e.g. `poetry add uvicorn[standard]@latest`).<br>
-Use `poetry show` to list all the dependencies.
+You can use poetry to add more dependencies to the project (e.g. <code>poetry add uvicorn[standard]@latest</code>).<br>
+Use <code>poetry show</code> to list all the dependencies.
 
-Then, on the service's root directory `/api-nei`, run the FastAPI server via poetry with the Python command:
+Then, on the service's root directory <code>/api-nei</code>, run the FastAPI server via poetry with the Python command:
 ```
 poetry run uvicorn app.main:app --reload
 ```
@@ -160,19 +163,20 @@ poetry run uvicorn app.main:app --reload
 
 
 <details>
-<summary>API Taça UA (api-tacaua)</summary>
+<summary>API Taça UA <code>api-tacaua</code></summary>
 <br>
 
-The installation for this api is equal to the *API NEI installation*.
-<details>
+The installation for this api is equal to the <em>API NEI installation</em>.
+</details>
 
 
 <details>
-<summary>API Family (api-family)</summary>
+<summary>API Family <code>api-family</code></summary>
 <br>
 
-*To be written...*
-<details>
+to be written
+<!-- TODO: complete -->
+</details>
 
 
 
