@@ -1,6 +1,5 @@
 site_name: NEI Platform Documentation
 
-site_url: http://atnog-crowdwire1.av.it.pt/
 site_description: Project documentation with Markdown.
 site_author: NEI Administration Team
 repo_url: https://github.com/NEI-AAUAV/PlatformDocumentation
@@ -21,11 +20,15 @@ nav:
     - Overview: admin-guide/README.md
     - Deployment: admin-guide/deployment.md
     - Decisions: admin-guide/decisions.md
+    - STIC Requests: admin-guide/stic-requests.md
 
 theme:
   name: material
   favicon: assets/favicon.ico
   logo: assets/logo.png
+  font: 
+    text: Ubuntu
+    code: Ubuntu Mono
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -64,3 +67,10 @@ plugins:
       auto_caption: false
       caption_position: bottom
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
