@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Project documentation with Markdown." name="description"/>
+<meta content="NEI Administration Team" name="author"/>
+<link href="../decisions/" rel="prev"/>
+<link href="../../assets/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<title>STIC Requests - NEI Platform Documentation</title>
+<link href="../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Ubuntu";--md-code-font:"Ubuntu Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="green" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#stic-requests">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="NEI Platform Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="NEI Platform Documentation">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            NEI Platform Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              STIC Requests
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+</form>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/NEI-AAUAV/PlatformDocumentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    Platform-Documentation
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="NEI Platform Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="NEI Platform Documentation">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+    NEI Platform Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/NEI-AAUAV/PlatformDocumentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    Platform-Documentation
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../code-of-conduct/">
+        Code of Conduct
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/installation/">
+        Getting Started
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/installation/">
+        Installation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/architecture/">
+        Architecture
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/rest-api/">
+        REST APIs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/package-management/">
+        Package Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/good-practices/">
+        Good Practices
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Admin Guide
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Admin Guide
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../deployment/">
+        Deployment
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../decisions/">
+        Decisions
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          STIC Requests
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        STIC Requests
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s221004_0021-maquina-virtual-para-o-site-neiwebuapt">
+    S221004_0021 maquina virtual para o site nei.web.ua.pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s221118_0033-alteracao-da-rede-da-maquina-do-nei">
+    S221118_0033 Alteração da rede da máquina do NEI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s221220_0003-autenticacao-com-o-idp-da-ua">
+    S221220_0003 Autenticação com o IDP da UA
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s230405_0015-bloqueio-da-conexao-smtp-gmail">
+    S230405_0015 Bloqueio da conexão SMTP GMAIL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s230424_0026-aumento-do-espaco-em-disco">
+    S230424_0026 Aumento do espaço em disco
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s221004_0021-maquina-virtual-para-o-site-neiwebuapt">
+    S221004_0021 maquina virtual para o site nei.web.ua.pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s221118_0033-alteracao-da-rede-da-maquina-do-nei">
+    S221118_0033 Alteração da rede da máquina do NEI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s221220_0003-autenticacao-com-o-idp-da-ua">
+    S221220_0003 Autenticação com o IDP da UA
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s230405_0015-bloqueio-da-conexao-smtp-gmail">
+    S230405_0015 Bloqueio da conexão SMTP GMAIL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s230424_0026-aumento-do-espaco-em-disco">
+    S230424_0026 Aumento do espaço em disco
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="stic-requests">STIC Requests</h1>
+<ul>
+<li><a href="https://bud.ua.pt">Balcão Único Digital da UA</a></li>
+<li><a href="https://sharepoint.ua.pt/formularios/Requests/Forms/thumbnails1.aspx">Sharepoint - Formulários</a></li>
+</ul>
+<p>Pode ser preciso estar conectado à VPN da UA para aceder aos links acima.</p>
+<p>Breve descrição da necessidade  : maquina virtual para o site nei.web.ua.pt</p>
+<p>Descrição adicional Q129  : Solicitar Alojamento de Servidores Virtuais</p>
+<p>Sistema Operativo do servidor  : Windows Server 2019</p>
+<h2 id="s221004_0021-maquina-virtual-para-o-site-neiwebuapt"><small>S221004_0021</small><br/> maquina virtual para o site nei.web.ua.pt</h2>
+<p><strong>Tópico:</strong> Alojar (Housing) servidor Virtual no Datacenter da UA <br/>
+<strong>Beneficiário:</strong> Leandro Silva <br/>
+<strong>Requisitante:</strong> Nautília Maia <br/>
+<strong>Data:</strong> 04/10/2022 - 11/10/2022 <br/>
+<strong>Documentos:</strong></p>
+<ul>
+<li>nei_web_ua_pt.pfx</li>
+</ul>
+<p><strong>Histórico:</strong></p>
+<details class="call-made" open="open">
+<summary>04/10/2022</summary>
+<p>O NEI, pretende solicitar uma maquina virtual para o site nei.web.ua.pt</p>
+<p>O que pretendem, uma vez que o seu alojamento é Windows com IIS, precisam de uma VM Linux com SSH.</p>
+<p>As especificações da máquina são 4 cores, com 8gb de RAM e 20GB para a base de dados. Expor os portos 80, 443 e 587.</p>
+<p>Obrigada</p>
+</details>
+<details class="call-received">
+<summary>06/10/2022</summary>
+<p>Bom dia Leandro,</p>
+<p>Do que sabemos, o site tem estado no hosting.</p>
+<p>As tecnologias que o hosting suporta deixaram de ser suficientes para os requisitos da vossa aplicação?</p>
+<p>Obrigado.</p>
+<p>José Ramalho</p>
+</details>
+<details class="call-made">
+<summary>06/10/2022</summary>
+<p>Boa tarde, José Ramalho,</p>
+<p>Sim, como alteramos as tecnologias, precisamos agora de requisitos diferentes. Posso tentar enquadrar mais especificamente o nosso ponto de situação.</p>
+<p>O NEI esteve a fazer alterações à stack do website para automatizar e facilitar o desenvolvimento e manutenção do website em futuros mandatos do NEI. Para isso, colocamos tudo em dockers e modernizamos algumas tecnologias - convertemos, por exemplo, a API de PHP para FastAPI e alteramos a BD para PostgreSQL. Contudo, ao tentar requisitar outra máquina nos STIC para colocar a nossa nova stack, não conseguimos obter o que queríamos. Os vossos serviços limitavam-nos a uma máquina Windows com IIS, com uma BD pré-criada em MySQL, e acesso por FTP, e o essencial seria mesmo uma máquina Linux com acesso por SSH por onde poderíamos correr a nossa stack em docker com Continuous Deployment por Github Actions.</p>
+<p>Caso seja importante, deixo já definido que o responsável administrativo / técnico para esta nova VM seria eu, Leandro Silva, ou seja, o mesmo responsável do atual hosting.</p>
+<p>Obrigado pela atenção,</p>
+<p>Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>06/10/2022</summary>
+<p>Bom dia Leandro,</p>
+<p>O NEI já tem uma VM com Ubuntu, aauav-nei.ua.pt. A esta VM têm acesso os UUs:</p>
+<p>danielteixeira31@ua.pt
+joaosilva9@ua.pt
+miguel.fradinho@ua.pt
+ruicoelho@ua.pt</p>
+<p>Têm algum problema em usar esta VM?</p>
+</details>
+<details class="call-made">
+<summary>10/10/2022</summary>
+<p>Boa tarde,</p>
+<p>O NEI sofreu mudanças extremas na equipa, pelo que não houve knowledge sharing do que foi feito ou do que está nessa VM.
+Como não estamos mais em contacto com esses 4 utilizadores, teríamos preferência por uma VM nova. Nós já temos inclusive outro DNS preparado para a nova VM, nei-aauav.pt, uma vez que não temos acesso à administração do anterior.
+No entanto, assumo que atualmente essa VM está em desuso, e que, portanto, pode ser eliminada com segurança. Agora percebo que não possa vir da minha decisão eliminar a VM, mas se conseguir entrar em contacto com algum desses utilizadores, tenho a certeza que eles dirão que a podem apagar.</p>
+<p>Obrigado pela compreensão,</p>
+<p>Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>10/10/2022</summary>
+<p>Do nosso lado, só precisamos que nos informem que a VM é para repor da raíz e entregamos a VM limpa. Esta é a VM que foi atribuída ao NEI para o que entenderem.</p>
+</details>
+<details class="call-made">
+<summary>10/10/2022</summary>
+<p>Nesse caso, agradecíamos que repusessem a VM de raiz.
+Consegue nos indicar quais são as especificações dessa VM?</p>
+<p>Obrigado</p>
+</details>
+<details class="call-received">
+<summary>10/10/2022</summary>
+<p>1 VCPU, 2GB RAM e 20GB disco. O pedido apenas será retomado quando alguém no DETI confirme a constituição dos atuais membros do NEI (já fizemos o pedido).</p>
+</details>
+<details class="call-received">
+<summary>10/10/2022</summary>
+<p>A VM foi recriada.
+Aumentei os recursos para 2vCPUs, 4GB de RAM e 20GB.
+Podes aceder por ssh com o teu UU.</p>
+</details>
+<details class="call-made">
+<summary>21/11/2022</summary>
+<p>Boa tarde, na necessidade de continuar este pedido, acabei por criar um pedido diferente quando talvez teria sido melhor dar continuidade a este mesmo.</p>
+<p>Por essa razão, e seguindo o indicação do STIP Helpdesk, envio a referência do pedido novo que criei para garantir de que fica ao encargo da mesma pessoa: <strong>S221118_0033</strong></p>
+<p>De reforçar que este pedido tem um caráter <strong>urgente</strong>, uma vez que se avizinha um evento que depende da existência do website.</p>
+<p>Obrigado por toda a atenção dispendida.</p>
+</details>
+<details class="call-received">
+<summary>22/11/2022</summary>
+<p>Boa tarde,</p>
+<p>Este pedido diz respeito à disponibilização de uma VM, que vocês já tinham, e que foi recriada. Há algum problema com a VM? Não conseguem aceder?</p>
+</details>
+<details class="call-made">
+<summary>22/11/2022</summary>
+<p>Boa tarde,</p>
+<p>Neste pedido pedi para que abrissem as portas 80, 443 e 587 para o exterior da UA, o qual foi recusado por a máquina se encontrar numa rede interna que não tem acessos abertos para o exterior.</p>
+<p>Por essa razão, abri outro pedido que pedisse que a máquina fosse então movida para uma rede com acesso ao exterior.</p>
+<p>Como não obtive resposta, foi-me recomendado pelo Helpdesk dos STIC para reabrir este pedido e referenciar o pedido que tinha aberto, S221118_0033, uma vez que estão relacionados e seria mais simples se a mesma pessoa que estava anteriormente responsável resolvesse o pedido.</p>
+<p>Peço desculpa pela confusão, mas agradecia que tratassem este pedido com cariz urgente, uma vez que se avizinha um evento que depende da existência da máquina.</p>
+<p>Obrigado</p>
+<p>No pedido anterior estava escrito o seguinte:</p>
+<p>...</p>
+</details>
+<details class="call-received">
+<summary>23/11/2022</summary>
+<p>A VM mudou de rede e manteve o mesmo nome dns: aauav-nei.ua.pt. Falta abrir os portos solicitados.</p>
+</details>
+<details class="call-made">
+<summary>25/11/2022</summary>
+<p>Boa tarde, Hermano Pereira,</p>
+<p>Não querendo causar obstinação, encontro-me a reabrir o pedido só para me assegurar de que estas questões colocadas no pedido <strong>S221118_0033</strong> também eram resolvidas, uma vez que neste ficou apenas resolvido a eliminação do site nei.web.ua.pt:</p>
+<p>"Seria possível depois mudar o domínio da nova máquina aauav-nei.ua.pt para o mesmo domínio, nei.web.ua.pt?"</p>
+<p>"E seria possível manter também o atual certificado com CN *.web.ua.pt?"</p>
+<p>Obrigado pela atenção,</p>
+<p>Leandro Silva</p>
+</details>
+<details class="call-made">
+<summary>27/11/2022 (email)</summary>
+<p>Boa tarde, Hermano Pereira,</p>
+<p>Estou a enviar esta mensagem devido à urgência em que tempos em ter o pedido S221004_0021 resolvido, isto é, ter as portas abertas ao exterior da UA e com o certificado da UA. Obtive a informação de que estava responsável pelo nosso pedido através do Helpdesk dos STIC.</p>
+<p>Como precisávamos de ter o pedido resolvido até terça, seria fundamental que nos avisasse se esta data é suficiente para o conseguirem resolver.</p>
+<p>Cumprimentos,
+Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>28/11/2022 (email)</summary>
+<p>Olá Leandro,</p>
+<p>Os acessos estão configurados e a criação do certificado está a ser tratada pelo colega responsável.</p>
+<p>Temos uma dúvida: foi pedido a abertura do porto 587 em direção à máquina do nei a partir da Internet. Foi equívoco e é ao contrario ou pretendem instalar um serviço de correio electrónico.</p>
+<p>Cumprimentos,
+Hermano Filipe D. Pereira</p>
+</details>
+<details class="call-made">
+<summary>28/11/2022 (email)</summary>
+<p>Olá Hermano,</p>
+<p>Obrigado pela resposta.</p>
+<p>Não, apenas pretendíamos comunicar com outro servidor de correio eletronico externo à UA, não instaltar. Haveria algum problema?</p>
+<p>Cumprimentos,</p>
+<p>Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>28/11/2022 (email)</summary>
+<p>Olá,</p>
+<p>E qual é o destino? Gmail?</p>
+</details>
+<details class="call-made">
+<summary>28/11/2022 (email)</summary>
+<p>Sim, para um SMTP Gmail.</p>
+</details>
+<details class="call-received">
+<summary>29/11/2022</summary>
+<p>Bom dia Leandro,</p>
+<p>A fim de esclarecer de forma mais rápida o que ainda está pendente, pode facultar-me um contato telefónico ou ligar para o meu número (964XXXXXX)?</p>
+<p>Cumprimentos,</p>
+<p>José Ramalho</p>
+</details>
+<details class="call-made">
+<summary>29/11/2022</summary>
+<p>O meu contacto telefónico: +351 912 XXX XXX</p>
+</details>
+<details class="call-received">
+<summary>30/11/2022</summary>
+<p>Bom dia Leandro,</p>
+<p>Segue em anexo o certificado. A password de acesso é:</p>
+<p>xxxxxxxxxxxxxxx</p>
+<p>O endereço nei.web.ua.pt já se encontra a apontar para a máquina aauav-nei.ua.pt.</p>
+<p>Como o registo foi efetuado recentemente, é possível que a alteração não seja visivel de imediato.</p>
+<p>Relativamente às restantes regras, os colegas do firewall entrarão em contato quando estiver concluído.</p>
+<p>Obrigado.</p>
+<p>José Ramalho</p>
+</details>
+<details class="call-received">
+<summary>30/11/2022 (email)</summary>
+<p>Boa tarde Leandro,</p>
+<p>Acabei de encerrar o pedido por já ter tudo concluído, a mudança de DNS e o certificado.
+Entretanto falei com o colega Hermano que me indicou já ter aberto os portos solicitados mas estando ainda a aguardar pela vossa resposta em relação ao porto 587.
+Podem contatá-lo diretamente respondendo ao email que vos foi enviado a 28/11.</p>
+<p>Cumprimentos,
+Hermano Filipe D. Pereira</p>
+</details>
+<details class="call-made">
+<summary>01/12/2022 (email)</summary>
+<p>Boa noite, Hermano Pereira,</p>
+<p>Estou a enviar este email por indicação do José Ramalho.</p>
+<p>Não sei se seria a pessoa responsável pela questão da abertura das portas para o exterior da UA, mas ainda não confirmei a abertura das portas 80 e 443 na máquina aauav-nei.ua.pt, apesar do que foi dito pelo José Ramalho.</p>
+<p>Sobre a questão da porta 587, seria para comunicar com o SMTP Gmail. Haveria algum problema com este ponto?</p>
+<p>Obrigado,
+Leandro Silva</p>
+</details>
+<details class="call-made">
+<summary>05/12/2022</summary>
+<p>Boa dia,</p>
+<p>Estou a reabrir o pedido para comunicar que ainda não confirmei a <strong>abertura das portas 80 e 443</strong> na máquina aauav-nei.ua.pt.</p>
+<p>Tinha também pedido a abertura da porta 587, para comunicar com o SMTP Gmail, mas caso esta porta requeira mais tempo para certas averiguações, pedia que abrissem primeiramente a 80 e 443 o mais breve possível.</p>
+<p>Estamos seriamente dependentes da abertura dessas portas <strong>até o dia 7, quarta-feira</strong>.</p>
+<p>Obrigado pela compreensão,</p>
+<p>Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>05/12/2022 (email)</summary>
+<p>Olá,</p>
+<p>Não há problema, acessos já estão configurados no firewall da UA. Se tiverem problemas de conectividade quando testarem, poderei ajudar a diagnosticar .</p>
+<p>Cumprimentos,
+Hermano Filipe D. Pereira</p>
+</details>
+<details class="call-received">
+<summary>05/12/2022</summary>
+<p>Boa tarde,</p>
+<p>Os portos 80 e 443 já se encontravam configurados mas apenas estavam a funcionar dentro da UA porque o registo DNS da máquina só estava visível para o interior da UA. Testem por favor.</p>
+<p>Relativamente ao porto 587, chegaram a responder ao mail e às questões colocadas pelo colega Hermano?</p>
+<p>Obrigado.</p>
+</details>
+<details class="call-made">
+<summary>05/12/2022 (email)</summary>
+<p>Muito obrigado, Hermano Pereira,</p>
+<p>Já confirmei a conectividade!</p>
+<p>Sobre a porta 587, não haveria maneira de a abrir também?</p>
+<p>Cumprimentos,
+Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>05/12/2022 (email)</summary>
+<p>Olá,</p>
+<p>Supostamente o 587 está aberto para o gmail! Testaram e não funciona? Não encontro tentativas de acesso ao porto 587 a partir de aauav-nei.ua.pt.</p>
+<p>HF</p>
+</details>
+<details class="call-made">
+<summary>05/12/2022 (email)</summary>
+<p>Olá, Hermano Pereira,</p>
+<p>Sim, já confirmei também a existência da porta 587.</p>
+<p>Muito obrigado,
+Leandro Silva</p>
+</details>
+<h2 id="s221118_0033-alteracao-da-rede-da-maquina-do-nei"><small>S221118_0033</small><br/> Alteração da rede da máquina do NEI</h2>
+<p><strong>Tópico:</strong> Solicitar Operações em Sites Web Genéricos <br/>
+<strong>Beneficiário:</strong> Leandro Silva <br/>
+<strong>Requisitante:</strong> Leandro Silva <br/>
+<strong>Data:</strong> 18/11/2022 - 23/11/2022 <br/>
+<strong>Histórico:</strong></p>
+<details class="call-received">
+<summary>09/11/2022 (email)</summary>
+<p>Caro utilizador,</p>
+<p>O seu pedido nº 348 de criação de regras no foi recusado.</p>
+<p>Motivo da recusa:</p>
+<p>A máquina aauav-nei.ua.pt encontra-se numa rede interna que nao tem acessos abertos para o exterior.
+Para a abertura de acessos para a internet a máquina terá que mudar de rede.</p>
+<p>O pedido terá que ser feito em https://bud.ua.pt .</p>
+</details>
+<details class="call-made">
+<summary>18/11/2022</summary>
+<p>Boa tarde,</p>
+<p>No pedido nº 348 de criação de regras foi nos recusado a abertura das portas 80, 443 e 587 para o exterior da UA por termos a máquina numa rede interna sem acessos abertos para o exterior.
+Entretanto, tivemos a preparar-nos para mudar completamente a nossa stack para a nova máquina, a aauav-nei.ua.pt, e descartar a atual, a nei.web.ua.pt.</p>
+<p>Presumindo que a única rede com acesso ao exterior seja dentro do domínio web.ua.pt, seria possível mudar o domínio da nova máquina para nei.web.ua.pt, e descartar a que tem esse domínio de momento?
+Acerca do certificado, seria possível manter também o atual com CN *.web.ua.pt?</p>
+<p>Obrigado pela atenção.</p>
+</details>
+<details class="call-received">
+<summary>22/11/2022</summary>
+<p>Bom dia,</p>
+<p>Quando tiverem migrado o site nei.web.ua.pt para a nova máquina devem fazer um pedido para a eliminação do site da plataforma de alojamento de sites web de projectos da UA em https://bud.ua.pt -&gt; Preciso Algo -&gt; Comunicação e colaboração -&gt; Alojamento de conteúdos web -&gt; Solicitar Operações em Sites Web Genéricos.</p>
+<p>Damos este pedido como terminado pois o assunto que refere já se encontra em tratamento no pedido S221004_0021.</p>
+<p>Bom trabalho!</p>
+<p>Alex Angélico</p>
+</details>
+<details class="call-made">
+<summary>22/11/2022</summary>
+<p>Boa tarde,</p>
+<p>Neste pedido pedi para que abrissem as portas 80, 443 e 587 para o exterior da UA, o qual foi recusado por a máquina se encontrar numa rede interna que nao tem acessos abertos para o exterior.</p>
+<p>Por essa razão, abri outro pedido que pedisse que a máquina fosse então movida para uma rede com acesso ao exterior.</p>
+<p>Como não obtive resposta, foi me recomendado pelo Helpdesk dos STIC para reabrir este pedido e referenciar o pedido que tinha aberto, <strong>S221118_0033</strong>, uma vez que estão relacionados e seria mais simples se a mesma pessoa que estava anteriormente responsável resolvesse o pedido.</p>
+<p>Obrigado</p>
+</details>
+<details class="call-received">
+<summary>23/11/2022</summary>
+<p>Bom dia,</p>
+<p>As questões que coloca já estão a ser respondidas no pedido S221004_0021, por esse motivo este pedido é encerrado.</p>
+<p>Quando tiverem migrado o site nei.web.ua.pt para a nova máquina devem fazer um pedido para a eliminação do site da plataforma de alojamento de sites web de projectos da UA em https://bud.ua.pt -&gt; Preciso Algo -&gt; Comunicação e colaboração -&gt; Alojamento de conteúdos web -&gt; Solicitar Operações em Sites Web Genéricos.</p>
+<p>Bom trabalho!</p>
+<p>Alex Angélico</p>
+</details>
+<details class="call-made">
+<summary>24/11/2022</summary>
+<p>Boa tarde,</p>
+<p>Já confirmei a existência da máquina na nova rede. Falta então só <strong>abrir as portas 80, 443 e 587</strong> para o exterior da UA.</p>
+<p>Estamos preparados para a migração da nossa stack para a nova máquina, portanto solicito então aqui a <strong>eliminação da máquina</strong> nei.web.ua.pt.</p>
+<p>Seria possível depois <strong>mudar o domínio</strong> da nova máquina aauav-nei.ua.pt para o mesmo domínio, nei.web.ua.pt? </p>
+<p>E seria possível <strong>manter também o atual certificado</strong> com CN *.web.ua.pt?</p>
+<p>Obrigado</p>
+</details>
+<details class="call-received">
+<summary>25/11/2022</summary>
+<p>Boa tarde,</p>
+<p>De acordo com o solicitado o site nei.web.ua.pt foi eliminado.</p>
+<p>As restantes questões estão a ser tratadas pelos colegas no pedido S221004_0021.</p>
+<p>Bom trabalho!</p>
+<p>Alex Angélico</p>
+</details>
+<details class="call-made">
+<summary>27/11/2022 (email)</summary>
+<p>Boa tarde, Hermano Pereira,</p>
+<p>Estou a enviar esta mensagem devido à urgência em que tempos em ter o pedido S221004_0021 resolvido, isto é, ter as portas abertas ao exterior da UA e com o certificado da UA. Obtive a informação de que estava responsável pelo nosso pedido através do Helpdesk dos STIC.</p>
+<p>Como precisávamos de ter o pedido resolvido até terça, seria fundamental que nos avisasse se esta data é suficiente para o conseguirem resolver.</p>
+<p>Cumprimentos,
+Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>28/11/2022 (email)</summary>
+<p>Olá Leandro,</p>
+<p>Os acessos estão configurados e a criação do certificado está a ser tratada pelo colega responsável.</p>
+<p>Temos uma dúvida: foi pedido a abertura do porto 587 em direção à máquina do nei a partir da Internet. Foi equívoco e é ao contrario ou pretendem instalar um serviço de correio electrónico.</p>
+<p>Cumprimentos,
+Hermano Filipe D. Pereira</p>
+</details>
+<details class="call-made">
+<summary>28/11/2022 (email)</summary>
+<p>Olá Hermano,</p>
+<p>Obrigado pela resposta.</p>
+<p>Não, apenas pretendíamos comunicar com outro servidor de correio eletronico externo à UA, não instaltar. Haveria algum problema?</p>
+<p>Cumprimentos,</p>
+<p>Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>28/11/2022 (email)</summary>
+<p>Olá,</p>
+<p>E qual é o destino? Gmail?</p>
+</details>
+<details class="call-made">
+<summary>28/11/2022 (email)</summary>
+<p>Sim, para um SMTP Gmail.</p>
+</details>
+<details class="call-received">
+<summary>30/11/2022 (email)</summary>
+<p>Boa tarde Leandro,</p>
+<p>Acabei de encerrar o pedido por já ter tudo concluído, a mudança de DNS e o certificado.
+Entretanto falei com o colega Hermano que me indicou já ter aberto os portos solicitados mas estando ainda a aguardar pela vossa resposta em relação ao porto 587.
+Podem contatá-lo diretamente respondendo ao email que vos foi enviado a 28/11.</p>
+<p>Cumprimentos,
+Hermano Filipe D. Pereira</p>
+</details>
+<details class="call-made">
+<summary>01/12/2022 (email)</summary>
+<p>Boa noite, Hermano Pereira,</p>
+<p>Estou a enviar este email por indicação do José Ramalho.</p>
+<p>Não sei se seria a pessoa responsável pela questão da abertura das portas para o exterior da UA, mas ainda não confirmei a abertura das portas 80 e 443 na máquina aauav-nei.ua.pt, apesar do que foi dito pelo José Ramalho.</p>
+<p>Sobre a questão da porta 587, seria para comunicar com o SMTP Gmail. Haveria algum problema com este ponto?</p>
+<p>Obrigado,
+Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>05/12/2022 (email)</summary>
+<p>Olá,</p>
+<p>Não há problema, acessos já estão configurados no firewall da UA. Se tiverem problemas de conectividade quando testarem, poderei ajudar a diagnosticar .</p>
+<p>Cumprimentos,
+Hermano Filipe D. Pereira</p>
+</details>
+<details class="call-made">
+<summary>05/12/2022 (email)</summary>
+<p>Muito obrigado, Hermano Pereira,</p>
+<p>Já confirmei a conectividade!</p>
+<p>Sobre a porta 587, não haveria maneira de a abrir também?</p>
+<p>Cumprimentos,
+Leandro Silva</p>
+</details>
+<details class="call-received">
+<summary>05/12/2022 (email)</summary>
+<p>Olá,</p>
+<p>Supostamente o 587 está aberto para o gmail! Testaram e não funciona? Não encontro tentativas de acesso ao porto 587 a partir de aauav-nei.ua.pt.</p>
+<p>HF</p>
+</details>
+<details class="call-made">
+<summary>05/12/2022 (email)</summary>
+<p>Olá, Hermano Pereira,</p>
+<p>Sim, já confirmei também a existência da porta 587.</p>
+<p>Muito obrigado,
+Leandro Silva</p>
+</details>
+<h2 id="s221220_0003-autenticacao-com-o-idp-da-ua"><small>S221220_0003</small><br/> Autenticação com o IDP da UA</h2>
+<p><strong>Título:</strong> Solicitar Operações em Sites Web Genéricos <br/>
+<strong>Beneficiário:</strong> Leandro Silva <br/>
+<strong>Requisitante:</strong> Leandro Silva <br/>
+<strong>Data:</strong> 20/12/2022 - 23/12/2022 <br/>
+<strong>Histórico:</strong></p>
+<details class="call-made" open="open">
+<summary>20/12/2022</summary>
+<p>Boa dia,</p>
+<p>Há 11 dias atrás realizei um pedido no https://identity.ua.pt/oauth/apps para integração no website do Núcleo de Estudantes de Informática, mas continua Sob aprovação. Desta maneira, e sob orientação do Helpdesk dos STIC, tento procurar feedback por este meio para saber se preciso de acrescentar alguma informação. </p>
+<p>Não sabendo como identificar o pedido, envio o nome da aplicação e a key que me foi fornecida:</p>
+<p><strong>Nome:</strong> Núcleo de Estudantes de Informática</p>
+<p><strong>Chave:</strong> _82e3318ee5c5cf2c7d7f7a1367fd4b3ea40858f08a</p>
+<p>Obrigado pela atenção,</p>
+<p>Leandro Silva, Vogal da Administração Interna do NEI
+912XXXXXX</p>
+</details>
+<details class="call-received">
+<summary>03/01/2023</summary>
+<p>Boa tarde, o pedido foi agora aprovado, pedimos desculpa pela demora na resposta.</p>
+</details>
+<h2 id="s230405_0015-bloqueio-da-conexao-smtp-gmail"><small>S230405_0015</small><br/> Bloqueio da conexão SMTP GMAIL</h2>
+<p><strong>Tópico:</strong> Criar|alterar regras de acesso no firewall <br/>
+<strong>Beneficiário:</strong> Leandro Silva <br/>
+<strong>Requisitante:</strong> Leandro Silva <br/>
+<strong>Data:</strong> 05/04/2023 - 12/04/2023 <br/>
+<strong>Histórico:</strong></p>
+<details class="call-made" open="open">
+<summary>05/04/2023</summary>
+<p>Boa tarde, no seguimento dos pedidos:</p>
+<p>Nº: <strong>S221004_0021</strong> </p>
+<p>Data: 04/10/2022 12:24:03</p>
+<p>Nº: <strong>S221118_0033</strong> </p>
+<p>Data: 18/11/2022 14:56:18</p>
+<p>Nº: <strong>S221220_0003</strong> </p>
+<p>Data: 20/12/2022 09:51:53</p>
+<p>quero solicitar mais uma vez a abertura da porta <strong>587/tcp</strong> da máquina <strong>nei.web.ua.pt</strong> (aauav-nei.ua.pt) para o exterior da UA.</p>
+<p>Na altura, quando dei o pedido por concluído, penso que tinha verificado com o <strong>Hermano Pereira</strong> que a conexão existia.
+Supostamente a porta <strong>587</strong> estava aberta para o <strong>smtp.gmail.com</strong>.</p>
+<p>No entanto, deixamos de verificar isso no dia anterior. Tentamos perceber a origem do problema, e após corrermos o telnet dentro da máquina:
+telnet smtp.gmail.com 587
+verificamos que não conseguiamos estabeler uma conexão TCP.</p>
+<p>Haverá alguma regra na firewall que esteja a bloquear a conexão?</p>
+<p>Obrigado pela atenção.</p>
+<p>Leandro Silva,
+Vogal do Núcleo de Estudantes de Informática</p>
+</details>
+<details class="call-received">
+<summary>05/04/2023</summary>
+<p>Boa tarde,</p>
+<p>Este pedido foi colocado no tópico errado.</p>
+<p>nslookup nei.web.ua.pt
+Server: dns3.ua.pt
+Address: 192.168.227.20</p>
+<p>Name: aauav-nei.ua.pt
+Address: 193.137.172.78
+Aliases: nei.web.ua.pt</p>
+<p>Bom trabalho!
+Alex Angélico</p>
+</details>
+<details class="call-received">
+<summary>12/04/2023</summary>
+<p>Acesso configurado. Pedimos que testem.</p>
+</details>
+<h2 id="s230424_0026-aumento-do-espaco-em-disco"><small>S230424_0026</small><br/> Aumento do espaço em disco</h2>
+<p><strong>Tópico:</strong> Solicitar Operações em Sites Web Genéricos <br/>
+<strong>Beneficiário:</strong> Leandro Silva <br/>
+<strong>Requisitante:</strong> Leandro Silva <br/>
+<strong>Data:</strong> 24/04/2023 - 28/04/2023 <br/>
+<strong>Histórico:</strong></p>
+<details class="call-made" open="open">
+<summary>24/04/2023</summary>
+<p>Boa tarde,</p>
+<p>Gostaria de solicitar um aumento de espaço de armazenamento. Estou usando este espaço para armazenar materiais educacionais que, atualmente, está cheio de anotações, arquivos e zips usados para ajudar os alunos a estudar para as unidades curriculares. </p>
+<p>Com o tempo, este acúmulo de materiais tem crescido e atingido o limite do espaço atualmente disponível. Isso impede o correto funcionamento dos serviços ativos e de continuar a adicionar novos recursos e materiais.</p>
+<p>Por este motivo, peço que seja considerada a alocação de espaço adicional de armazenamento na máquina. Neste momento, <strong>temos 20GB de memória disco, e gostariamos de duplicar este valor para 40GB</strong>. Qualquer quantidade de espaço adicional fornecida seria muito apreciada.</p>
+<p>Agradeço antecipadamente pela atenção e ajuda.</p>
+<p>Cumprimentos,
+Leandro Silva, Vogal do Núcleo de Estudantes de Informática</p>
+</details>
+<details class="call-received">
+<summary>28/04/2023</summary>
+<p>O disco da VM foi aumentado para 40GB. Podem estender no mesmo no SO.</p>
+</details>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - All right reserved by NEI-AAUAv
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
